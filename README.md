@@ -14,7 +14,6 @@
 ## Association
 
 - has_many :items
-- has_one :address
 - has_many :orders
 <!-- - has_many :comments -->
 
@@ -35,7 +34,6 @@
 ## Association
 
 - belongs_to :user
-- has_one :address
 - has_one :order
 <!-- - has_many :comments -->
 
@@ -49,26 +47,25 @@
 | house_number    | string    | null: false                    |
 | building        | string    |                                |
 | telephone       | string    | null: false                    |
-| user            | reference | null: false, foreign_key: true |
-| item            | reference | null: false, foreign_key: true |
+| order           | reference | null: false, foreign_key: true |
 
 ## Association
 
-- belongs_to :user
-- belong_to :item
+- belong_to :order
 
 ## Orders テーブル
 
-| column | Type      | Options                        |
-| ------ | ------    | ------------------------------ |
-| user   | reference | null: false, foreign_key: true |
-| user   | reference | null: false, foreign_key: true |
-| item   | reference | null: false, foreign_key: true |
+| column  | Type      | Options                        |
+| ------- | ------    | ------------------------------ |
+| user    | reference | null: false, foreign_key: true |
+| item    | reference | null: false, foreign_key: true |
+| address | reference | null: false, foreign_key: true |
 
 ## Association
 
+- has_one :address
 - belongs_to :user
-- belongs_to :item 
+- belongs_to :item
 
 <!-- ## Comments テーブル
 
