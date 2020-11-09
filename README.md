@@ -14,6 +14,7 @@
 ## Association
 
 - has_many :items
+- has_one :address
 - has_many :orders
 <!-- - has_many :comments -->
 
@@ -35,6 +36,7 @@
 
 - belongs_to :user
 - has_one :address
+- has_one :order
 <!-- - has_many :comments -->
 
 ## Address テーブル
@@ -54,6 +56,19 @@
 
 - belongs_to :user
 - belong_to :item
+
+## Orders テーブル
+
+| column | Type      | Options                        |
+| ------ | ------    | ------------------------------ |
+| user   | reference | null: false, foreign_key: true |
+| user   | reference | null: false, foreign_key: true |
+| item   | reference | null: false, foreign_key: true |
+
+## Association
+
+- belongs_to :user
+- belongs_to :item 
 
 <!-- ## Comments テーブル
 
