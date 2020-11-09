@@ -2,15 +2,15 @@
 
 ## users テーブル
 
-| column          | Type   | Options     |
-| --------------- | ------ | ----------- |
-| nickname        | string | null: false |
-| first_name      | string | null: false |
-| last_name       | string | null: false |
-| first_name_kana | string | null: false |
-| last_name_kana  | string | null: false |
-| birth_date      | date   | null: false |
-| password        | string | null: false |
+| column                    | Type   | Options     |
+| ------------------------- | ------ | ----------- |
+| nickname                  | string | null: false |
+| first_name                | string | null: false |
+| last_name                 | string | null: false |
+| first_name_kana           | string | null: false |
+| last_name_kana            | string | null: false |
+| birth_date                | date   | null: false |
+| encrypted_password        | string | null: false |
 ## Association
 
 - has_many :items
@@ -59,7 +59,6 @@
 | ------- | ------    | ------------------------------ |
 | user    | reference | null: false, foreign_key: true |
 | item    | reference | null: false, foreign_key: true |
-| address | reference | null: false, foreign_key: true |
 
 ## Association
 
