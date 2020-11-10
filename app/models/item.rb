@@ -18,6 +18,7 @@ class Item < ApplicationRecord
   validates :price, numericality: { greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999},
                     format: { with: /\A[0-9]+\z/, message: 'Half-width number' }
 
+  belongs_to :user
   has_one_attached :image
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :category, :sales_status, :prefecture, :shipping_fee, :scheduled_delivery
