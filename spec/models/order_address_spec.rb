@@ -41,6 +41,11 @@ RSpec.describe OrderAddress, type: :model do
       expect(@order_address.errors.full_messages).to include("House number can't be blank")
     end
 
+    it '建物は入力しなくても登録できる' do
+      @order_address.building = nil
+      expect(@order_address).to be_valid
+    end
+
     it '電話番号の入力が必須である' do
       @order_address.telephone = nil
       @order_address.valid?
